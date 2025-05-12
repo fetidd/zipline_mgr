@@ -1,0 +1,14 @@
+[package]
+name = "zipline-mgr"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "winds"
+path = "src/winds.rs"
+
+[[bin]]
+name = "line"
+path = "src/line.rs"
+
+[dependencies]
