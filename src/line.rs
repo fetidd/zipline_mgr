@@ -8,12 +8,11 @@ fn main() {
     }
     let mut sender = std::net::TcpStream::connect(BIND_ADDR_WINDS).unwrap();
     let str_arg = args.nth(1).unwrap();
-    println!("sending {str_arg}");
-    let mut buf = str_arg.into_bytes();
+    print!("sending {str_arg}...");
+    let buf = str_arg.into_bytes();
     sender.write(&buf).unwrap();
-    let _ = sender.flush();
-    println!("waiting...");
-    let mut recv = vec![0; 3];
+    let mut recv = vec![0; 1];
     sender.read_exact(&mut recv).unwrap();
-    println!("{}", String::from_utf8_lossy(&recv));
+    println!(" success!");
 }
+
